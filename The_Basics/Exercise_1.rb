@@ -4,7 +4,7 @@ first_name = "Oscar"
 last_name = "Romero"
 
 # String concatenation
-# I did this before looking at the video
+puts "Code before watching video"
 puts first_name + " " + last_name
 # or
 # String interpolation

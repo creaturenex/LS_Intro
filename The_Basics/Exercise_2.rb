@@ -8,13 +8,14 @@
 # on the number I made up to match the number in the specific location
 # I also did not think about listing the result of my code like in the example
 # I was just going to do the math
+puts "Code before watching video"
 1234
 1234 / 1234
 1234 / 617
 1234 % 78 / 18
 1234 % 1230
 
-# per your video
+puts "Code after watching video"
 puts 1234
 thousands = 1234 / 1000
 hundreds = 1234 % 1000 / 100

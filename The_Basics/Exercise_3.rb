@@ -8,7 +8,7 @@
 # 2001
 # 1981
 
-# What I put before looking at your video
+puts "Code before watching video"
 movies = { "Captain America" => 2011,
   "Ironman" => 2008,
   "Hulk" => 2009,
@@ -18,7 +18,7 @@ movies = { "Captain America" => 2011,
   movies.each{ |movie, year| puts year}
 
 
-# after watching your solution
+puts "Code after watching video"
 movies = { :captain_america => 2011,
             :ironman => 2008,
             :hulk => 2009,
