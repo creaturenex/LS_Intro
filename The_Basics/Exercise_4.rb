@@ -3,12 +3,11 @@
 # Then make your program output the same thing as exercise 3.
 # How I did it before looking at the video
 
-puts "Code before watching video"
+puts 'Code before watching video'
 array = [1975, 2004, 2013, 2001, 1981]
 puts array
 
-
-puts "Code after watching video"
+puts 'Code after watching video'
 dates = [1975, 2004, 2013, 2001, 1981]
 
 puts dates[0]
