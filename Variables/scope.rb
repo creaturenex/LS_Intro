@@ -9,6 +9,7 @@ end
 
 puts a
 puts b
+
 # you will get an error when you get to "b"
 
 # scope.rb:11:in `<main>': undefined local variable or
