@@ -1,6 +1,7 @@
-<<<<<<< HEAD
-# README #
-=======
-# LS_Intro
-LaunchSchool Intro to Programming Exercises  
->>>>>>> faeb6e3324cb4f089018c6a53dc6295fa4609672
+# README
+
+<https://launchschool.com>
+
+Launch School - Intro to Programming Preparatory Exercises
+
+Working through Launch School's Intro to Programming book exercises.
