@@ -105,3 +105,16 @@ No!
 `number` is scoped at the method definition level and `a`'s value is unchanged. Therefore, we proved that method definitions cannot modify arguments passed in to them permanently.
 
 There's an exception to this rule. The exception is *when we perform some action on the argument that mutates the caller, we can in fact permanently alter variables outside the method definition's scope.*
+
+    Example: Mutated caller
+
+    a = [1, 2, 3]
+
+    # Example of a method definition that modifies its argument permanently
+    def mutate(array)
+      array.pop
+    end
+
+    p "Before mutate method: #{a}"
+    mutate(a)
+    p "After mutate method: #{a}"
