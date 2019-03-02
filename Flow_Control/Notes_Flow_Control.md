@@ -1,5 +1,4 @@
 # Flow Control
-***
 
 When you are writing programs, you want your data to make the right decisions. You want your data to do the right thing when it's supposed to. In computer programming, this is called conditional flow. This is done by using **conditionals**
 
@@ -23,6 +22,7 @@ A conditional is a fork (or option) in the road. When our programs gets to a con
     end
 
 The examples below are all valid Ruby conditionals.
+
     # Example 1
     if x == 3
       puts "x is 3"
@@ -106,9 +106,9 @@ Lets review comparison operators to build more complicated conditional statement
     irb :003 > '5' == 5
     => false
 
-In the above example the 5 does not equal 5. That is because one 5 is a string denoted ed by the '' while the other is a number/integer.
+In the above example the 5 does not equal 5. That is because one 5 is a string denoted by the ' ' while the other is an integer.
 
-`!=`` - The "not equal to" operator. Anything to the left of the symbol is not equal to anything to the right.
+`!=` - The "not equal to" operator. Anything to the left of the symbol is not equal to anything to the right.
 
     irb :001 > 4 != 5
     => true
@@ -121,7 +121,7 @@ In the above example the 5 does not equal 5. That is because one 5 is a string d
 
 ## Combining Expressions
 
- It is possible to combine multiple conditional expressions together to create a more specific scenario. This is done using the ``&&` and `||` operators.
+ It is possible to combine multiple conditional expressions together to create a more specific scenario. This is done using the `&&` and `||` operators.
 
 `&&` - the "and" operator. Expressions to the left and to the right of this operator have to be both true for the entire expression to be evaluated to true.
 
@@ -145,12 +145,10 @@ In the above example the 5 does not equal 5. That is because one 5 is a string d
     irb :002 > (4 == 5) || (5 == 6)
     => false
 
-'!'- the "not" operator. When you add this in front of a boolean expression it will change that boolean value to its opposite.
+`!` - the "not" operator. When you add this in front of a boolean expression it will change that boolean value to its opposite.
 
     irb :001 > !(4 == 4)
     => false
-
-
 
 ## **Order of Precedence**
 
