@@ -1,4 +1,5 @@
 # Flow Control
+***
 
 When you are writing programs, you want your data to make the right decisions. You want your data to do the right thing when it's supposed to. In computer programming, this is called conditional flow. This is done by using **conditionals**
 
@@ -106,3 +107,83 @@ Lets review comparison operators to build more complicated conditional statement
     => false
 
 In the above example the 5 does not equal 5. That is because one 5 is a string denoted ed by the '' while the other is a number/integer.
+
+`!=`` - The "not equal to" operator. Anything to the left of the symbol is not equal to anything to the right.
+
+    irb :001 > 4 != 5
+    => true
+
+    irb :002 > 4 != 4
+    => false
+
+    irb :003 > 4 != 156
+    => true
+
+## Combining Expressions
+
+ It is possible to combine multiple conditional expressions together to create a more specific scenario. This is done using the ``&&` and `||` operators.
+
+`&&` - the "and" operator. Expressions to the left and to the right of this operator have to be both true for the entire expression to be evaluated to true.
+
+    irb :001 > (4 == 4) && (5 == 5)
+    => true
+
+    irb :002 > (4 == 5) && (5 == 5)
+    => false
+
+    irb :002 > (4 == 5) && (5 == 6)
+    => false
+
+`||` - the "or" operator. Either the expression to the left has to be true, or the expression to the right has to be true for the entire expression to be evaluated to true.
+
+    irb :001 > (4 == 4) || (5 == 5)
+    => true
+
+    irb :002 > (4 == 5) || (5 == 5)
+    => true
+
+    irb :002 > (4 == 5) || (5 == 6)
+    => false
+
+'!'- the "not" operator. When you add this in front of a boolean expression it will change that boolean value to its opposite.
+
+    irb :001 > !(4 == 4)
+    => false
+
+
+
+## **Order of Precedence**
+
+The following is a list of operations from highest order of precedence (top) to lowest (bottom).
+
+`<=`, `<`, `>`, `>=` - Comparison
+
+`==`, `!=` - Equality
+
+`&&` - Logical AND
+
+`||` - Logical OR
+
+    Example of order of precedence
+    if x && y || z
+      # do something
+    end
+
+First the x && y statement will be executed.
+If that statement is true, then the program will execute the # do something code on the next line.
+If the x && y statement is false, then the z will be evaluated.
+If the z is true, the code on the next line will be evaluated. If the z is false, then the code will exit the if statement.
+
+# Ternary Operators
+
+Ruby has a nice option for short and concise conditional `if` statements. The ternary operator is a common Ruby idiom that makes a quick `if/else` statement easy and keeps it all on one line.
+
+The ternary operator uses a combination of the `?` and `:`.
+
+    # Ternary operator example
+
+    irb :001 > true ? "this is true" : "this is not true"
+    => "this is true"
+
+    irb :001 > false ? "this is true" : "this is not true"
+    => "this is not true"
