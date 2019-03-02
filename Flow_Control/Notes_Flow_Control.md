@@ -2,6 +2,10 @@
 
 When you are writing programs, you want your data to make the right decisions. You want your data to do the right thing when it's supposed to. In computer programming, this is called conditional flow. This is done by using **conditionals**
 
+With an `if` statement you can check if something is true.
+
+You can also say “if this is NOT true then do this other thing”: which why we use `else` to check if its false
+
 ## Conditionals
 
 A conditional is a fork (or option) in the road. When our programs gets to a conditional it tells the program where to go based on the parameters. Conditionals are formed using a combination of `if` statements and comparison operators `<, >, <=, >=, ==, !=, &&, ||`. They are the basic logical structures that define with the reserved words `if`, `else`, `elsif`, and `end`.
@@ -185,3 +189,6 @@ The ternary operator uses a combination of the `?` and `:`.
 
     irb :001 > false ? "this is true" : "this is not true"
     => "this is not true"
+
+So what is going on above?
+The program is evaluating the code to the left of `?` if i
