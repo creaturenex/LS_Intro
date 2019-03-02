@@ -105,4 +105,4 @@ Lets review comparison operators to build more complicated conditional statement
     irb :003 > '5' == 5
     => false
 
-    In the above example the 5 does not equal 5. That is because one 5 is a string denoted ed by the '' while the other is a number/integer.
+In the above example the 5 does not equal 5. That is because one 5 is a string denoted ed by the '' while the other is a number/integer.
