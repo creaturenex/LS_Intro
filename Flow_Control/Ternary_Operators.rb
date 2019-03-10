@@ -18,3 +18,7 @@ if false
 else
   puts "This is true"
 end
+
+# If evalautes when true!
+
+# Else evalautes when not true!

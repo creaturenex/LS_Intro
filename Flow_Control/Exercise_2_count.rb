@@ -8,9 +8,9 @@
 # Check the Ruby Docs!)
 
 def supersize(words)
-  if words.length > 10
+  if words.count >= 10
     puts words.upcase
-  elsif words.length < 10
+  elsif words.count < 10
     puts "Word too short! Use a longer word!"
   end
 end

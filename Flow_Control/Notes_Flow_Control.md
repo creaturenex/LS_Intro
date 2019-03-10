@@ -176,7 +176,7 @@ If that statement is true, then the program will execute the # do something code
 If the x && y statement is false, then the z will be evaluated.
 If the z is true, the code on the next line will be evaluated. If the z is false, then the code will exit the if statement.
 
-# Ternary Operators
+## Ternary Operators
 
 Ruby has a nice option for short and concise conditional `if` statements. The ternary operator is a common Ruby idiom that makes a quick `if/else` statement easy and keeps it all on one line.
 
@@ -191,4 +191,31 @@ The ternary operator uses a combination of the `?` and `:`.
     => "this is not true"
 
 So what is going on above?
-The program is evaluating the code to the left of `?` if i
+
+The program is evaluating the code to the left of `?`.
+
+The string to the left of the ":" is the same same as the `if` statement. `if` is evaluated if it IS true.
+
+The string to the right of the `:` is the same as the `else` statement. `else` is evaluated if it is NOT true.
+
+## Case Statements
+
+A case statement has similar functionality to an if statement but with a slightly different interface.
+
+Case statements use the reserved words `case`, `when`, `else`, and `end`. You create one by first defining a case and then evaluating the value of the case and what operation to complete if that case is true.
+
+See case_statement.rb
+
+See case_statement_refactored.rb
+
+## True and False
+
+**In Ruby, every expression evaluates to true when used in flow control, except for false and nil.**
+
+    if x = 5
+      puts "how can this be true?"
+    else
+      puts "it is not true"
+    end
+
+The above code is not testing whether x is equal to "5". It's assigning the variable x the value of "5", which will always evaluate to true. Unfortunately, that looks very similar to if x == 5, which is testing whether x is equal to "5". Be careful when reading or writing Ruby; its expressiveness can also be a source of many subtle bugs.
