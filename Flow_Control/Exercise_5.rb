@@ -22,6 +22,7 @@ end
 puts "Type any number between 0 and 100"
 puts num_range
 
+# this took forever when I looked up case_statement, I learned there are 2 different types, It looks like I was combining the two types and was having the hardest time.
 
 
 puts "Code after watching video"
