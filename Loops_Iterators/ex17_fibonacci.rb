@@ -1,10 +1,11 @@
-# recursion_doubler.rb
+# fibonacci.rb
 
-def doubler(start)
-  puts start
-  if start < 10
-    doubler(start * 2)
+def fibonacci(number)
+  if number < 2
+    number
+  else
+    fibonacci(number - 1) + fibonacci(number - 2)
   end
 end
 
-# type this into the terminal using "irb"
+puts fibonacci(6)

@@ -202,7 +202,7 @@ Only the method is defined in the previous example, so when you use it and want 
 
     # recursion_doubler.rb
 
-### another example of recursion
+### Another example of recursion
 
 We are using a method that uses recursion to calculate the nth number in the fibonacci sequence. You can learn more about the fibonacci sequence [here](http://en.wikipedia.org/wiki/Fibonacci_number). Basically, it is a sequence of numbers in which each number is the sum of the previous two numbers in the sequence.
 
@@ -215,3 +215,7 @@ Note: This example may take a few reads to really grasp what's happening at ever
     execute the following file
 
     # fibonacci.rb
+
+Each time the code branches off again you are calling the fibonacci function from within itself two times. If you take all of those ones and zeros and add them together, you'll get the same answer you get when you run the code. You can see why computer programs are handy now. Think if you had to draw that diagram out every time you wanted to know the fibonacci respresentation of a number. Yikes!
+
+The key concept with recursion is that there is some baseline condition that returns a value, which then "unwinds" the recursive calls. You can think of the successive recursive calls building up, until some value is returned, and only then can the recursive calls be evaluated.
