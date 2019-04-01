@@ -1,221 +1,217 @@
-# Flow Control
+# Loops and Iterators
 
-When you are writing programs, you want your data to make the right decisions. You want your data to do the right thing when it's supposed to. In computer programming, this is called conditional flow. This is done by using **conditionals**
+A loop is the repetitive execution of a piece of code for a given amount of repetitions or until a certain condition is met.
 
-With an `if` statement you can check if something is true.
+  Examples of loops
 
-You can also say “if this is NOT true then do this other thing”: which why we use `else` to check if its false
+  `while` loops,
 
-## Conditionals
+  `do/while` loops,
 
-A conditional is a fork (or option) in the road. When our programs gets to a conditional it tells the program where to go based on the parameters. Conditionals are formed using a combination of `if` statements and comparison operators `<, >, <=, >=, ==, !=, &&, ||`. They are the basic logical structures that define with the reserved words `if`, `else`, `elsif`, and `end`.
+  `for` loops
 
-    Example of a conditional
+## Simple Loops
 
-    # conditional.rb
+The simplest way to create a loop in Ruby is using the loop method. loop takes a block, which is denoted by { ... } or do ... end. A loop will execute any code within the block (again, that's just between the {} or do ... end) until you manually intervene with Ctrl + c or insert a break statement inside the block, which will force the loop to stop and the execution will continue after the loop.
 
-    puts "Put in a number"
-    a = gets.chomp.to_i
+    Example of a loop
 
-    if a == 3
-      puts "a is 3"
-    elsif a == 4
-      puts "a is 4"
-    else
-      puts "a is neither 3, nor 4"
-    end
+    execute the following file
 
-The examples below are all valid Ruby conditionals.
+    # loop_example.rb
 
-    # Example 1
-    if x == 3
-      puts "x is 3"
-    end
+### Controlling Loop Execution
 
-    # Example 2
-    if x == 3
-      puts "x is 3"
-    elsif x == 4
-      puts "x is 4"
-    end
+You'll hardly do something like this in a real program as it's not very useful and will result in an infinite loop. Eventually your system will crash.
 
-    # Example 3
-    if x == 3
-      puts "x is 3"
-    else
-      puts "x is NOT 3"
-    end
+Let's look at a more useful example with the `break` keyword by creating a file named useful_loop.rb:
 
-    # Example 4:
-    must use "then" keyword when using 1-line syntax
-    if x == 3 then puts "x is 3" end
+    Example of a useful loop
 
-Other ways to write Conditionals
+    execute the following file
 
-Another way to write the Example 1 from above
+    # useful_loop.rb
 
-    # Example 1 rewritten
+The `break` keyword allows us to exit a loop at any point, so any code after a `break` will not be executed. Note that `break` will not exit the program, but only exit the loop and execution will continue on from after the loop.
 
-    puts "x is 3" if x == 3
+Next, let's look at adding conditions within a loop by printing all even numbers from 0 up to 10. Let's create a file named `conditional_loop.rb`
 
-Another reserved word is `unless`, it acts as the opposite of `if`, so you can use it like this.
+    Example of a conditional loop
 
-    puts "x is not 3" unless x == 3
+    execute the following file
 
-## Comparisons
+    # conditional_loop.rb
 
-Lets review comparison operators to build more complicated conditional statements.
+You can see from the above that break was not executed during the first 4 iterations through the loop, but on the 5th iteration, the `if` statement evaluated to `true` and so the code within the `if` statement was executed, which is just `break`, and execution exited the loop.
 
-**NOTE: Comparison Operators always return a boolean value. A boolean value is either `true` or `false`, nothing else.**
+We'll talk explicitly about using conditionals within a loop later. Similar to how we use `break` to exit a loop, we can use the keyword `next` to skip the rest of the current iteration and start executing the next iteration. We'll use the same example as before to demonstrate. This time we'll skip `4`.
 
-`<` - The "less than" symbol. Anything to the left of the symbol has a lower value than anything to the right of the symbol.
+    Example of a next loop
 
-`>` - The "greater than" symbol. Anything to the left of the symbol has a higher value than anything to the right of the symbol.
+    execute the following file
 
-    # Example using 'less than' and 'greater than'
+    # next_loop.rb
 
-    irb :001 > 4 < 5
-    => true
+## While Loops
 
-    irb :002 > 4 > 5
-    => false
+A **while loop** is given a parameter that evaluates to a boolean (remember, that's just `true` or `false`). Once that boolean expression becomes `false`, the while loop is not executed again, and the program continues after the while loop. Code within the while loop can contain any kind of logic that you would like to perform.
 
-`<=` - The "less than or equal to" symbol. Anything to the left of the symbol is less than or equal to anything on the right.
+We want this program to countdown from any number given by the user and print to the screen each number as it counts.
 
-`>=` - the "greater than or equal to" symbol. Anything to the left of the symbol is greater than or equal to anything on the right.
+    Example of a while loop
 
-    irb :001 > 4 <= 5
-    => true
+    execute the following file
 
-    irb :002 > 5 >= 5
-    => true
+    # countdown_loop.rb
 
-    irb :003 > 4 >= 5
-    => false
+## Until Loops
 
-    irb :004 > 4 >= 3
-    => true
+The until loop is simply the opposite of the while loop. You can substitute it in order to phrase the problem in a different way.
 
-    irb :005 > 4 >= 4
-    => true
+There are instances when using until will allow you to write code that is more readable and logical. Ruby has many features for making your code more expressive. The until loop is one of those features.
 
-`==` - The "is equal to" operator. Anything to the left of the symbol is exactly equal to anything on the right.
+    Example of a until loop
 
-    irb :001 > 5 == 5
-    => true
+    execute the following file
 
-    irb :002 > 5 == 6
-    => false
+    # countdown_until_loop.rb
 
-    irb :003 > '5' == 5
-    => false
+## Do/While Loops
 
-In the above example the 5 does not equal 5. That is because one 5 is a string denoted by the ' ' while the other is an integer.
+A do/while loop works in a similar way to a while loop; one important difference is that the code within the loop gets executed one time, prior to the conditional check to see if the code should be executed. In a "do/while" loop, the conditional check is placed at the end of the loop as opposed to the beginning.
 
-`!=` - The "not equal to" operator. Anything to the left of the symbol is not equal to anything to the right.
+The following code is a classic use case for a "do/while", because we want to repeatedly perform an action based on some condition, but we want the action to be executed at least one time no matter what.
 
-    irb :001 > 4 != 5
-    => true
+    Example of a do/while loop
 
-    irb :002 > 4 != 4
-    => false
+    execute the following file
 
-    irb :003 > 4 != 156
-    => true
+    # perform_again_loop.rb
 
-## Combining Expressions
+Ruby also allows Do/While loops to be constructed as, it is not the preferred method.
 
- It is possible to combine multiple conditional expressions together to create a more specific scenario. This is done using the `&&` and `||` operators.
+    begin
+      puts "Do you want to do that again?"
+        answer = gets.chomp
+      end while answer == 'Y'
 
-`&&` - the "and" operator. Expressions to the left and to the right of this operator have to be both true for the entire expression to be evaluated to true.
+## For Loops
 
-    irb :001 > (4 == 4) && (5 == 5)
-    => true
+In Ruby, for loops are used to loop over a collection of elements. Unlike a while loop where if we're not careful we can cause an infinite loop, for loops have a definite end since it's looping over a finite number of elements. It begins with the `for` reserved word, followed by a variable, then the `in` reserved word, and then a collection of elements. We'll show this using an array and a range. A range is a special type in Ruby that captures a range of elements. For example `1..3` is a range that captures the integers `1`, `2`, and `3`.
 
-    irb :002 > (4 == 5) && (5 == 5)
-    => false
+    Example of a for loop
 
-    irb :002 > (4 == 5) && (5 == 6)
-    => false
+    execute the following file
 
-`||` - the "or" operator. Either the expression to the left has to be true, or the expression to the right has to be true for the entire expression to be evaluated to true.
+    # countdown3_for_loop.rb
 
-    irb :001 > (4 == 4) || (5 == 5)
-    => true
+The odd thing about the for loop is that the loop returns the collection of elements after it executes, whereas the earlier while loop examples return nil. Let's look at another example using an array instead of a range.
 
-    irb :002 > (4 == 5) || (5 == 5)
-    => true
+    Example of a for loop
 
-    irb :002 > (4 == 5) || (5 == 6)
-    => false
+    execute the following file
 
-`!` - the "not" operator. When you add this in front of a boolean expression it will change that boolean value to its opposite.
+    # countdown4_for_loop.rb
 
-    irb :001 > !(4 == 4)
-    => false
+## Conditionals Within Loops
 
-## **Order of Precedence**
+To make loops more effective and precise, we can add conditional flow control within them to alter their behavior.
 
-The following is a list of operations from highest order of precedence (top) to lowest (bottom).
+    Example of a conditional while loop
 
-`<=`, `<`, `>`, `>=` - Comparison
+    execute the following file
 
-`==`, `!=` - Equality
+    # conditional_while_loop.rb
 
-`&&` - Logical AND
+This loop uses the `odd?` method to decide if the current variable in the loop is odd. If it is, it prints to the screen. Next,`x` increments by one, and then the loop proceeds to the next iteration.
 
-`||` - Logical OR
+The reserved words `next` and `break` can be useful when looping as well.
 
-    Example of order of precedence
-    if x && y || z
-      # do something
-    end
+If you place the `next` reserved word in a loop, it will jump from that line to the next loop iteration without executing the code beneath it. If you place the `break` reserved word in a loop, it will exit the loop immediately without executing any more code in the loop.
 
-First the x && y statement will be executed.
-If that statement is true, then the program will execute the # do something code on the next line.
-If the x && y statement is false, then the z will be evaluated.
-If the z is true, the code on the next line will be evaluated. If the z is false, then the code will exit the if statement.
+    Example of a conditional while next loop
 
-## Ternary Operators
+    execute the following file
 
-Ruby has a nice option for short and concise conditional `if` statements. The ternary operator is a common Ruby idiom that makes a quick `if/else` statement easy and keeps it all on one line.
+    # conditional_while_with_next_loop.rb
 
-The ternary operator uses a combination of the `?` and `:`.
 
-    # Ternary operator example
 
-    irb :001 > true ? "this is true" : "this is not true"
-    => "this is true"
+    Example of a conditional while break loop
 
-    irb :001 > false ? "this is true" : "this is not true"
-    => "this is not true"
+    execute the following file
 
-So what is going on above?
+    # conditional_while_with_break_loop.rb
 
-The program is evaluating the code to the left of `?`.
+## Iterators
 
-The string to the left of the ":" is the same same as the `if` statement. `if` is evaluated if it IS true.
+Iterators are methods that naturally loop over a given set of data and allow you to operate on each element in the collection.
 
-The string to the right of the `:` is the same as the `else` statement. `else` is evaluated if it is NOT true.
+We said earlier that arrays are ordered lists. Let's say that you had an array of names and you wanted to print them to the screen. How could you do that? You could use the each method for arrays, like this:
 
-## Case Statements
+    Example of a listing all names in array
 
-A case statement has similar functionality to an if statement but with a slightly different interface.
+    execute the following file
 
-Case statements use the reserved words `case`, `when`, `else`, and `end`. You create one by first defining a case and then evaluating the value of the case and what operation to complete if that case is true.
+    # practice_each_block.rb
 
-See case_statement.rb
+We have called the `each` method using the dot operator (`.`) on our array. What this method does is loop through each element in our array, in order, starting from `'Bob'`. Then it begins executing the code within the block. The block's starting and ending points are defined by the curly braces `{}`. Each time we iterate over the array, we need to assign the value of the element to a variable. In this example we have named the variable `name` and placed it in between two pipes `|`. After that, we write the logic that we want to use to operate on the variable, which represents the current array element. In this case it is simply printing to the screen using `puts`.
 
-See case_statement_refactored.rb
+    Example of a listing all names in array
 
-## True and False
+    execute the following file
 
-**In Ruby, every expression evaluates to true when used in flow control, except for false and nil.**
+    # practice_each_block_do_end.rb
 
-    if x = 5
-      puts "how can this be true?"
-    else
-      puts "it is not true"
-    end
+**There are many types of Iterators methods in Ruby, like `each`, dont worry will get to review them**
 
-The above code is not testing whether x is equal to "5". It's assigning the variable x the value of "5", which will always evaluate to true. Unfortunately, that looks very similar to if x == 5, which is testing whether x is equal to "5". Be careful when reading or writing Ruby; its expressiveness can also be a source of many subtle bugs.
+## Recursion
+
+**Recursion** is another way to create a loop in Ruby. Recursion is the act of calling a method from within itself. That probably sounds confusing so let's look at some actual code to get a better idea.
+
+A Simple Example
+Let's say you wanted to know what the double of a number was, then the double of that number, etc. Let's say you wanted to double the number until the pre-doubled number is 10 or greater. You could create the following method:
+
+    Example of a recursion
+
+    execute the following file
+
+    # recursion_doubler_method.rb
+
+  when this code is executed
+
+    irb(main):001:0> def doubler(start)
+    irb(main):002:1>   puts start * 2
+    irb(main):003:1> end
+    => :doubler
+    irb(main):004:0> doubler(2)
+    4
+    => nil
+    irb(main):005:0> doubler(4)
+    8
+    => nil
+    irb(main):006:0> doubler(8)
+    16
+    => nil
+
+Only the method is defined in the previous example, so when you use it and want to double multiple numbers, then you must run the doubler method each time.
+
+    Example of a recursion
+
+    execute the following file
+
+    # recursion_doubler.rb
+
+### another example of recursion
+
+We are using a method that uses recursion to calculate the nth number in the fibonacci sequence. You can learn more about the fibonacci sequence [here](http://en.wikipedia.org/wiki/Fibonacci_number). Basically, it is a sequence of numbers in which each number is the sum of the previous two numbers in the sequence.
+
+Note: This example may take a few reads to really grasp what's happening at every point in the program. That's normal. Just take your time, and you'll be fine. Also, be excited! We are getting closer to reading more real-world examples!
+
+![Fibonacci Visualized](</home/oscar/LS_Intro/Loops_Iterators/fibonacci_visual.png>)
+
+    Example of a recursion2
+
+    execute the following file
+
+    # fibonacci.rb
