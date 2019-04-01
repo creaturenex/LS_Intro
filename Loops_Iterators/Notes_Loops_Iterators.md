@@ -208,7 +208,7 @@ We are using a method that uses recursion to calculate the nth number in the fib
 
 Note: This example may take a few reads to really grasp what's happening at every point in the program. That's normal. Just take your time, and you'll be fine. Also, be excited! We are getting closer to reading more real-world examples!
 
-![Fibonacci Visualized](</LS_Intro/Loops_Iterators/fibonacci_visual.png>)
+![Fibonacci Visualized](<https://github.com/creaturenex/LS_Intro/blob/master/Loops_Iterators/fibonacci_visual.png>)
 
     Example of a recursion2
 
