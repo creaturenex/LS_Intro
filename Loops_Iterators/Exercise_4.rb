@@ -16,6 +16,7 @@ def countdown(x)
 end
 
 puts countdown(10)
+# my code doesn't include negative values as the exercise said count DOWN to zero.
 
 
 puts "code after watching video"
