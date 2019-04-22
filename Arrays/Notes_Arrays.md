@@ -87,186 +87,211 @@ As a side note, sometimes you will know the value that you want to delete, but n
     irb :009 > my_pets
     => ["dog", "bird", "snake"]
 
+Another useful method is the `uniq` method. This iterates through an array, deletes any duplicate values that exist, then returns the result as a new array.
 
+    irb :010 > b = [1, 1, 2, 2, 3, 3, 4, 4]
+    => [1, 1, 2, 2, 3, 3, 4, 4]
+    irb :011 > b.uniq
+    => [1, 2, 3, 4]
+    irb :012 > b
+    => [1, 1, 2, 2, 3, 3, 4, 4]
 
+## **Iterating Over an Array**
 
+ The `select` methods iterates over an array and returns a new array that includes any items that return `true` to the expression provided.
 
-### Controlling Loop Execution
+    irb :001 > numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    irb :002 > numbers.select { |number| number > 4 }
+    => [5, 6, 7, 8, 9, 10]
+    irb :003 > numbers
+    => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-You'll hardly do something like this in a real program as it's not very useful and will result in an infinite loop. Eventually your system will crash.
+The select method selects all of the numbers that are greater than 4 and returns them in an array. It does not mutate the caller (the original numbers array is unmodified).
 
-Let's look at a more useful example with the `break` keyword by creating a file named useful_loop.rb:
+## Methods With a !
 
-    Example of a useful loop
+The bang suffix (`!`) at the end of the method name usually indicates that the method will change (or mutate) the caller permanently. Unfortunately this is not always the case. It is a good rule to be wary of any method that has the bang suffix and to make sure to check the Ruby documentation to see if it will behave destructively (the word "destructive" here just means mutating the caller).
+
+Also, please note that there are methods like `pop` and `push` that are destructive, but do not have a `!` at the end.
 
-    execute the following file
-
-    # useful_loop.rb
-
-## While Loops
-
-A **while loop** is given a parameter that evaluates to a boolean (remember, that's just `true` or `false`). Once that boolean expression becomes `false`, the while loop is not executed again, and the program continues after the while loop. Code within the while loop can contain any kind of logic that you would like to perform.
-
-We want this program to countdown from any number given by the user and print to the screen each number as it counts.
-
-    Example of a while loop
-
-    execute the following file
-
-    # countdown_loop.rb
-
-## Until Loops
-
-The until loop is simply the opposite of the while loop. You can substitute it in order to phrase the problem in a different way.
-
-There are instances when using until will allow you to write code that is more readable and logical. Ruby has many features for making your code more expressive. The until loop is one of those features.
-
-    Example of a until loop
-
-    execute the following file
-
-    # countdown_until_loop.rb
-
-## Do/While Loops
-
-A do/while loop works in a similar way to a while loop; one important difference is that the code within the loop gets executed one time, prior to the conditional check to see if the code should be executed. In a "do/while" loop, the conditional check is placed at the end of the loop as opposed to the beginning.
-
-The following code is a classic use case for a "do/while", because we want to repeatedly perform an action based on some condition, but we want the action to be executed at least one time no matter what.
-
-    Example of a do/while loop
-
-    execute the following file
-
-    # perform_again_loop.rb
-
-Ruby also allows Do/While loops to be constructed as, it is not the preferred method.
-
-    begin
-      puts "Do you want to do that again?"
-        answer = gets.chomp
-      end while answer == 'Y'
-
-## For Loops
-
-In Ruby, for loops are used to loop over a collection of elements. Unlike a while loop where if we're not careful we can cause an infinite loop, for loops have a definite end since it's looping over a finite number of elements. It begins with the `for` reserved word, followed by a variable, then the `in` reserved word, and then a collection of elements. We'll show this using an array and a range. A range is a special type in Ruby that captures a range of elements. For example `1..3` is a range that captures the integers `1`, `2`, and `3`.
-
-    Example of a for loop
-
-    execute the following file
-
-    # countdown3_for_loop.rb
-
-The odd thing about the for loop is that the loop returns the collection of elements after it executes, whereas the earlier while loop examples return nil. Let's look at another example using an array instead of a range.
-
-    Example of a for loop
-
-    execute the following file
-
-    # countdown4_for_loop.rb
-
-## Conditionals Within Loops
-
-To make loops more effective and precise, we can add conditional flow control within them to alter their behavior.
-
-    Example of a conditional while loop
-
-    execute the following file
-
-    # conditional_while_loop.rb
-
-This loop uses the `odd?` method to decide if the current variable in the loop is odd. If it is, it prints to the screen. Next,`x` increments by one, and then the loop proceeds to the next iteration.
-
-The reserved words `next` and `break` can be useful when looping as well.
-
-If you place the `next` reserved word in a loop, it will jump from that line to the next loop iteration without executing the code beneath it. If you place the `break` reserved word in a loop, it will exit the loop immediately without executing any more code in the loop.
-
-    Example of a conditional while next loop
-
-    execute the following file
-
-    # conditional_while_with_next_loop.rb
-
-
-
-    Example of a conditional while break loop
-
-    execute the following file
-
-    # conditional_while_with_break_loop.rb
-
-## Iterators
-
-Iterators are methods that naturally loop over a given set of data and allow you to operate on each element in the collection.
-
-We said earlier that arrays are ordered lists. Let's say that you had an array of names and you wanted to print them to the screen. How could you do that? You could use the each method for arrays, like this:
-
-    Example of a listing all names in array
-
-    execute the following file
-
-    # practice_each_block.rb
-
-We have called the `each` method using the dot operator (`.`) on our array. What this method does is loop through each element in our array, in order, starting from `'Bob'`. Then it begins executing the code within the block. The block's starting and ending points are defined by the curly braces `{}`. Each time we iterate over the array, we need to assign the value of the element to a variable. In this example we have named the variable `name` and placed it in between two pipes `|`. After that, we write the logic that we want to use to operate on the variable, which represents the current array element. In this case it is simply printing to the screen using `puts`.
-
-    Example of a listing all names in array
-
-    execute the following file
-
-    # practice_each_block_do_end.rb
-
-**There are many types of Iterators methods in Ruby, like `each`, dont worry will get to review them**
-
-## Recursion
-
-**Recursion** is another way to create a loop in Ruby. Recursion is the act of calling a method from within itself. That probably sounds confusing so let's look at some actual code to get a better idea.
-
-A Simple Example
-Let's say you wanted to know what the double of a number was, then the double of that number, etc. Let's say you wanted to double the number until the pre-doubled number is 10 or greater. You could create the following method:
-
-    Example of a recursion
-
-    execute the following file
-
-    # recursion_doubler_method.rb
-
-  when this code is executed
-
-    irb(main):001:0> def doubler(start)
-    irb(main):002:1>   puts start * 2
-    irb(main):003:1> end
-    => :doubler
-    irb(main):004:0> doubler(2)
-    4
-    => nil
-    irb(main):005:0> doubler(4)
-    8
-    => nil
-    irb(main):006:0> doubler(8)
-    16
-    => nil
-
-Only the method is defined in the previous example, so when you use it and want to double multiple numbers, then you must run the doubler method each time.
-
-    Example of a recursion
-
-    execute the following file
-
-    # recursion_doubler.rb
-
-### Another example of recursion
-
-We are using a method that uses recursion to calculate the nth number in the fibonacci sequence. You can learn more about the fibonacci sequence [here](http://en.wikipedia.org/wiki/Fibonacci_number). Basically, it is a sequence of numbers in which each number is the sum of the previous two numbers in the sequence.
-
-Note: This example may take a few reads to really grasp what's happening at every point in the program. That's normal. Just take your time, and you'll be fine. Also, be excited! We are getting closer to reading more real-world examples!
-
-![Fibonacci Visualized](https://github.com/creaturenex/LS_Intro/blob/master/Loops_Iterators/fibonacci_visual.png)
-
-    Example of a recursion2
-
-    execute the following file
-
-    # fibonacci.rb
-
-Each time the code branches off again you are calling the fibonacci function from within itself two times. If you take all of those ones and zeros and add them together, you'll get the same answer you get when you run the code. You can see why computer programs are handy now. Think if you had to draw that diagram out every time you wanted to know the fibonacci respresentation of a number. Yikes!
-
-The key concept with recursion is that there is some baseline condition that returns a value, which then "unwinds" the recursive calls. You can think of the successive recursive calls building up, until some value is returned, and only then can the recursive calls be evaluated.
+## Mutating the Caller: The Sequel
+
+We talked about mutating the caller earlier, and we created an example to go along with it. But we think this concept is so important that we wanted to cover it in even more depth. It's important to keep this concept in mind, because it is possible that you could send an argument to a method and change that argument forever without knowing it. This can be a major source of confusion. That's why it's important to know what a method is doing to its arguments and to know what that method returns.
+
+We also wanted to revisit destructive methods within the context of using a method. Look at the two methods below and see if you can decipher why the first method mutates the caller, but the second one doesn't.
+
+    def mutate(arr)
+      arr.pop
+    end
+
+    def not_mutate(arr)
+      arr.select { |i| i > 3 }
+    end
+
+    a = [1, 2, 3, 4, 5, 6]
+    mutate(a)
+    not_mutate(a)
+
+    puts a
+
+The last line will output 1, 2, 3, 4, and 5. The mutate method performed a destructive action (i.e., pop) on its argument, thereby modifying the a array, even though a was initialized outside of the method. Therefore, the 6 element was popped out of the original array. The not_mutate method performed a non-destructive action (i.e., select), and therefore the original variable was unmodified.
+
+## Nested Arrays
+
+**Clean up info after this point**
+
+We talked earlier about arrays being able to contain anything. You can also create arrays with arrays inside of them. Let's say you were having a sand volleyball tournament and wanted to keep track of all of the teams that were playing. You might create an array like this.
+
+irb :001 > teams = [['Joe', 'Steve'], ['Frank', 'Molly'], ['Dan', 'Sara']]
+=> [["Joe", "Steve"], ["Frank", "Molly"], ["Dan", "Sara"]]
+Then you could find the teams by index.
+
+irb :002 > teams[1]
+=> ["Frank", "Molly"]
+You could also have an array of hashes too! We won't get into too many crazy examples here, but play around with it in irb.
+
+Comparing Arrays
+You can compare arrays for equality using the == operator.
+
+irb :001 > a = [1, 2, 3]
+=> [1, 2, 3]
+irb :002 > b = [2, 3, 4]
+=> [2, 3, 4]
+irb :003 > a == b
+=> false
+irb :004 > b.pop
+=> 4
+irb :005 > b.unshift(1)
+=> [1, 2, 3]
+irb :006 > a == b
+=> true
+You'll notice that we used the unshift method in this example. You can think of this as the opposite of the pop method. The pop method takes the last item off the list. The unshift method adds the arguments that you specify to the front of the list.
+
+to_s
+The to_s method is used to create a string representation of an array. Ruby does this behind the scenes when you use string interpolation to print an array to the screen.
+
+irb :001 > a = [1, 2, 3]
+=> [1, 2, 3]
+irb :002 > "It's as easy as #{a}"
+=> "It's as easy as [1, 2, 3]"
+In order to get our array to print properly, Ruby is calling the to_s method on our array and adding it into the string.
+
+Common Array Methods
+This section will introduce you to some common methods that Ruby has built-in to its Array class. You should bookmark that documentation page as it's probably something you'll want to refer to often.
+
+include?
+The include? method checks to see if the argument given is included in the array. It has a question mark at the end of it which usually means that it will return a boolean value. Just like the methods that end in a "!", this is strictly by convention only and not a property of the language.
+
+irb: 001 > a = [1, 2, 3, 4, 5]
+=> [1, 2, 3, 4, 5]
+irb: 002 > a.include?(3)
+=> true
+irb: 003 > a.include?(6)
+=> false
+flatten
+The flatten method can be used to take an array that contains nested arrays and create a one-dimensional array.
+
+irb: 001 > a = [1, 2, [3, 4, 5], [6, 7]]
+=> [1, 2, [3, 4, 5], [6, 7]]
+irb: 002 > a.flatten
+=> [1, 2, 3, 4, 5, 6, 7]
+Is the flatten method destructive? Find out for yourself in either irb, or by consulting the Array documentation.
+
+each_index
+The each_index method iterates through the array much like the each method, however the variable represents the index number as opposed to the value at each index. It passes the index of the element into the block and you may do as you please with it. The original array is returned.
+
+irb: 001 > a = [1, 2, 3, 4, 5]
+=> [1, 2, 3, 4, 5]
+irb: 002 > a.each_index { |i| puts "This is index #{i}" }
+This is index 0
+This is index 1
+This is index 2
+This is index 3
+This is index 4
+=> [1, 2, 3, 4, 5]
+each_with_index
+Another useful method that works in a similar way to each_index is each_with_index.
+
+irb: 001 > a = [1, 2, 3, 4, 5]
+=> [1, 2, 3, 4, 5]
+irb: 002 > a.each_with_index { |val, idx| puts "#{idx+1}. #{val}" }
+1. 1
+2. 2
+3. 3
+4. 4
+5. 5
+=> [1, 2, 3, 4, 5]
+each_with_index gives us the ability to manipulate both the value and the index by passing in two parameters to the block of code. The first is the value and the second is the index. You can then use them in the block.
+
+sort
+The sort method is a handy way to order an array. It returns a sorted array.
+
+irb :001 > a = [5, 3, 8, 2, 4, 1]
+=> [5, 3, 8, 2, 4, 1]
+irb :002 > a.sort
+=> [1, 2, 3, 4, 5, 8]
+Once again, test in irb to see if the sort method is destructive. (It's not, but test it out for yourself.) We won't remind you to test this in the future, but when you see methods like this in the future, ask yourself "is this method returning new data, or is the original data being modified?".
+
+product
+The product method can be used to combine two arrays in an interesting way. It returns an array that is a combination of all elements from all arrays.
+
+irb :001 > [1, 2, 3].product([4, 5])
+=> [[1, 4], [1, 5], [2, 4], [2, 5], [3, 4], [3, 5]]
+There are too many interesting methods to cover, but we wanted to give you a taste of the power of Ruby arrays and the many handy methods that come built-in with Ruby. If you ever think "I want my array to...", there is probably a method that already does this. First, check the documentation.
+
+each vs map
+each
+each provides a simple way of iterating over a collection in Ruby and is more preferred to using the for loop. The each method works on objects that allow for iteration and is commonly used along with a block. If given a block, each runs the code in the block once for each element in the collection and returns the collection it was invoked on. If no block is given, it returns an Enumerator. Let's look at some simple examples:
+
+a = [1, 2, 3]
+a.each { |e| puts e }
+
+# Outputs
+1
+2
+3
+=> [1, 2, 3]
+The above shows the commonest way of using each. We're iterating over each element on the array a and printing it out. Finally it returns [1, 2, 3].
+
+We can also modify the elements in a and print them out:
+
+a = [1, 2, 3]
+a.each { |e| puts e + 2 }
+
+# Outputs
+3
+4
+5
+=> [1, 2, 3]
+Again, we print out the modified values and return the original collection a.
+
+Here is a final example with no block; an Enumerator is returned:
+
+a = [1, 2, 3]
+a.each
+=> #<Enumerator: ...>
+map
+map also works on objects that allow for iteration. Like each, when given a block it invokes the given block once for each element in the collection. Where it really differs from each is the returned value. map creates and returns a new array containing the values returned by the block. Let's see it in action:
+
+a = [1, 2, 3]
+a.map { |x| x**2 }
+=> [1, 4, 9]
+We square each element in the block and create a new array containing the returned values by the block. Finally the new array is returned.
+
+To really examine that map creates a new array consisting of the returned value of the block, let's see an example with map and puts:
+
+a = [1, 2, 3]
+a.map { |x| puts x**2 }
+=> [nil, nil, nil]
+Because puts returns nil every time the block is invoked nil is returned which makes up the values in the newly created returned array.
+
+Finally, if no block is given, map returns an Enumerator:
+
+a = [1, 2, 3]
+a.map
+#<Enumerator: ...>
+each and map are important methods to know but can be quite confusing in the beginning. Another way to remember these methods: use each for iteration and map for transformation.
+
+Summary
+Arrays are an extremely valuable data set. They can be used to store many different kinds of data and you'll see them very often in the wild. Ruby's array class has lots of built-in methods that can be used to perform many of the daily functions that programmers use. Let's practice working with arrays for a bit with some exercises.

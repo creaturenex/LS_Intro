@@ -11,6 +11,8 @@ puts "Code before watching video"
 arr = [1, 2, 3, 4]
 
 arr2 = arr.map {|x| x + 2}
-
+# the first time I used the 'each' method, but it did not add the new value to arr2
+# 'each' does not create a new array it just selects, 'map' creates a new array.
+# 'each' would work if I 'push' or shoveled '<<' into a new emptry array.
 p arr
 p arr2

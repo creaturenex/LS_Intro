@@ -11,6 +11,8 @@ puts "Code before watching video"
 arr = [1, 2, 3, 4]
 arr2 = []
 arr.each {|x| arr2 << x + 2}
+# this method works if you have an empty array.
+# The shovel operator '<<' pushes values into the emptry array.
 
 p arr
 p arr2
