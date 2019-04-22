@@ -1,4 +1,4 @@
-# Exercise 4
+# Exercise_4.rb
 
 # Write a method that counts down to zero using recursion.
 
