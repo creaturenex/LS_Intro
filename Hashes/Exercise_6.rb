@@ -2,9 +2,7 @@
 
 # Given the array...
 
-# words = ['demo', 'none', 'tied', 'evil', 'dome', 'mode', 'live', 'fowl',
-#          'veil', 'wolf', 'diet', 'vile', 'edit', 'tide',
-#          'flow', 'neon']
+words = ['demo', 'none', 'tied', 'evil', 'dome', 'mode', 'live', 'fowl', 'veil', 'wolf', 'diet', 'vile', 'edit', 'tide', 'flow', 'neon']
 
 # Write a program that prints out groups of words that are anagrams.
 # Anagrams are words that have the same exact letters in them but in a different
@@ -13,3 +11,7 @@
 # ["demo", "dome", "mode"]
 # ["neon", "none"]
 # (etc)
+
+words_split = words.each {|element| "element".split("")}
+
+puts words_split
