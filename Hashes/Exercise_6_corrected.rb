@@ -11,14 +11,13 @@ words = ['demo', 'none', 'tied', 'evil', 'dome', 'mode', 'live', 'fowl', 'veil',
 # ["demo", "dome", "mode"]
 # ["neon", "none"]
 # (etc)
-WRONG
 
-words_split = words.each {|element| "element".split("")}
+words_hash = Hash[words.collect {|words| [words, words.split("").sort]}]
+# this makes a hash from using the values from the array "words" and the following makes a
+puts words_hash
 
-puts words_split
+unique_words = words_hash.values.uniq
 
-my idea so far
+unique_words_arr = Array.new(words_hash.values.uniq)
 
-words.each {|key, value| "word".split(//)}
-
-"demo".split(//)
+puts unique_words_arr

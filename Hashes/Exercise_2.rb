@@ -6,18 +6,15 @@
 
 puts "Code before watching Video
 Merge
-Returns  new hash containing the contents of other_hash and the contents of
-hsh.
+Returns a new hash containing the contents of other_hash and the contents of hash.
 
 Makes a new hash by combining two different hashes
 
 Merge! (this is a distructive meathod)
-Adds the contents of other_hash to hsh. If no block is specified, entries with
+Adds the contents of other_hash to hash. If no block is specified, entries with
 duplicate keys are overwritten with the values from other_hash.
 
-Makes a new hash by combining two different hashes, but overwrites one of the
-hashes used to create it and permenantly changes it to the new merged Hash
-"
+Makes a new hash by combining two different hashes, but overwrites one of the hashes used to create it and permenantly changes it to the new merged Hash"
 
 h1 = {mammal: "dog", avian: "hawk", fish: "shark"}
 h2 = {car: "ford" , plane: "f18", boat: "titanic"}

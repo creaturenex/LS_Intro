@@ -15,9 +15,11 @@ family = {  uncles: ["bob", "joe", "steve"],
 puts "Code before watching video"
 family.select { |k,v| (k == "sisters") || (k == "brothers")}
 puts "Code did not work
-In my code sisters and brothers are sting but if you look at the hash, the keys
-are actually symbols or in otherwords unchaning string, which are are typically
-used in hashes to label things"
+In my code sisters and brothers are string but if you look at the hash, the keys are actually symbols or in otherwords unchanging string, which are are typically used in hashes to label things
+
+In addition my code does not create a new array, it just select that information from the current array."
+
+puts "Pay attention 'key:' is a symbol or in otherwords an unchanging string!"
 
 puts "Code after watching video"
 

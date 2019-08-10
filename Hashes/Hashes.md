@@ -85,3 +85,42 @@ You may recall in chapter three on methods, we talked about the ability to assig
 
     greeting("Bob")
     greeting("Bob", {age: 62, city: "New York City"})
+
+We used Ruby hash's `empty?` method to detect whether the options parameter, which is a hash, had anything passed into it. You haven't seen this method yet but you can infer what it does. You could also check out the Ruby Docs to look up the method as well. At the end we called the method twice. Once using no optional parameters, and a second time using a hash to send the optional parameters. You can see how using this feature could make your methods much more expressive and dynamic.
+
+And finally, to add a small twist, you can also pass in arguments to the `greeting` method like this:
+
+    greeting("Bob", age: 62, city: "New York City")
+
+Notice the curly braces, `{ }`, are not required when a hash is the last argument, and the effect is identical to the previous example. This convention is commonly used by Rails developers. Understanding this concept alone should help you decipher some previously cryptic Rails code!
+
+## Hashes vs. Arrays
+
+This chapter and the last covered two very important and widely used data structures: hashes and arrays. It can be a bit overwhelming when you look at all of the different ways there are to represent data with code. Don't feel too daunted. Pick these things up in small parts and apply them. Then add more little parts as you move along. It's impossible to know everything in the beginning so put some effort into learning a few things well and then build from there.
+
+When deciding whether to use a hash or an array, ask yourself a few questions:
+
+-   Does this data need to be associated with a specific label? If yes, use a hash. If the data doesn't have a natural label, then typically an array will work fine.
+
+-   Does order matter? If yes, then use an array. As of Ruby 1.9, hashes also maintain order, but usually ordered items are stored in an array.
+
+-   Do I need a "stack" or a "queue" structure? Arrays are good at mimicking simple "first-in-first-out" queues, or "last-in-first-out" stacks.
+
+As you grow as a developer, your familiarity with these two data structures will naturally affect which one you reach for when looking to solve specific problems. The key is to practice and experiment with each to find out which data structure works best in certain situations.
+
+## A Note on Hash Keys
+
+Thus far, we have been using symbols as our keys in all of the hashes we've been creating. We have done this because it is the most common use case in the wild. However, it is possible to use a different data type for a key. Let's take a look.
+
+    irb :001 > {"height" => "6 ft"}     # string as key
+    => {"height"=>"6 ft"}
+    irb :002 > {["height"] => "6 ft"}   # array as key
+    => {["height"]=>"6 ft"}
+    irb :003 > {1 => "one"}             # integer as key
+    => {1=>"one"}
+    irb :004 > {45.324 => "forty-five point something"}  # float as key
+    => {45.324=>"forty-five point something"}
+    irb :005 > {{key: "key"} => "hash as a key"}  # hash as key
+    => {{:key=>"key"}=>"hash as a key"}
+
+Pretty bizarre. So you can see that hashes can be very diverse and you can pretty much store whatever you want to in them. Also notice that we are forced to use the old style (i.e., using `=>`) when we deviate from using symbols as keys.
