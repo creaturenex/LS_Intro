@@ -22,7 +22,7 @@ words = ['laboratory',
 words.each do |words|
   if words =~ /lab/
     puts words + " does contain 'lab' in the word"
-  elsif words =~ / Lab/
+  elsif words =~ / Lab/ # added because top line did not find Pans Labyrinth
 # after watching the video I learn to add "i" to make it case insensitive,
 # meaning it doesnt matter if the upper or lower case.
     puts words + " does contain 'lab' in the word"

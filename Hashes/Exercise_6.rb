@@ -11,14 +11,12 @@ words = ['demo', 'none', 'tied', 'evil', 'dome', 'mode', 'live', 'fowl', 'veil',
 # ["demo", "dome", "mode"]
 # ["neon", "none"]
 # (etc)
-Puts "WRONG, see Exercise_6_corrected.rb for my review, using the solution provided"
 
-words_split = words.each {|element| "element".split("")}
+Puts "WRONG, see Exercise_6_corrected.rb for my review, using the solution
+provided. Commented out my code"
 
-puts words_split
-
-my idea so far
-
-words.each {|key, value| "word".split(//)}
-
-"demo".split(//)
+# words_split = words.each {|element| "element".split("")}
+# puts words_split
+# my idea so far
+# words.each {|key, value| "word".split(//)}
+# "demo".split(//)
