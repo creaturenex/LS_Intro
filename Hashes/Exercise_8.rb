@@ -13,8 +13,8 @@
 # D. There's an array of strings, and we're trying to get the string keys out
 # of the array, but it doesn't exist.
 
-
 puts "code before watching video
 
-I think the answer is B as there currently isn't a key method for an Array object. Although I dont see why you couldnt define it yourself.
+I think the answer is B as there currently isn't a key method for an Array
+object. Although I dont see why you couldnt define it yourself.
 "
