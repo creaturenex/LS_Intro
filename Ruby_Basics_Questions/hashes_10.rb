@@ -2,7 +2,6 @@
 
 car = { type:  'sedan', color: 'blue', year:  2003 }
 
-
 cars = [[:type, 'sedan'], [:color, 'blue'], [:year, 2003]]
 
 # NOTE: arrays can contain any data type hence we see symbols, strings, and
