@@ -3,8 +3,8 @@
 
 # friends = ['Sarah', 'John', 'Hannah', 'Dave']
 
-friends = ['Sarah', 'John', 'Hannah', 'Dave']
+friends = %w(Sarah John Hannah Dave)
 
 for names in friends
-  puts "Hello, " + names + "!"
+  puts 'Hello, ' + names + '!'
 end
